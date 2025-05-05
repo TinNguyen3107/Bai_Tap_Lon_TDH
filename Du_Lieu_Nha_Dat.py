@@ -20,9 +20,16 @@ def du_lieu():
     time.sleep(3)
 
     data = []
+    
+    # for page in range(1, 11):
 
-    for page in range(1, 11):
+    #     if page > 1:
+    #         driver.get(f"https://123nhadatviet.com/rao-vat/cho-thue/nha-rieng/trang--{page}.html")
+    #         time.sleep(3)
+    
+    page = 1
 
+    while True:
         if page > 1:
             driver.get(f"https://123nhadatviet.com/rao-vat/cho-thue/nha-rieng/trang--{page}.html")
             time.sleep(3)

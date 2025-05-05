@@ -10,7 +10,7 @@ Dự án Python này giúp tự động thu thập dữ liệu **Cho thuê nhà 
 
 - Tự động truy cập vào trang web 123nhadatviet.com, chuyên mục "Nhà đất cho thuê", tự động chọn "Cho thuê nhà riêng".
 
-- Tự động trích xuất dữ liệu của từng mục nhà, đất trong 10 trang đầu tiên.
+- Tự động trích xuất dữ liệu của từng mục nhà, đất của tất cả các trang.
 
 - Nếu dữ liệu bị thiếu hoặc chưa lấy được sẽ hiển thị thông báo.
 
