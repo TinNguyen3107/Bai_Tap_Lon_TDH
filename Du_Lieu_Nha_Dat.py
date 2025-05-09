@@ -22,7 +22,6 @@ def du_lieu():
     data = []
     
     # for page in range(1, 11):
-
     #     if page > 1:
     #         driver.get(f"https://123nhadatviet.com/rao-vat/cho-thue/nha-rieng/trang--{page}.html")
     #         time.sleep(3)
@@ -36,10 +35,14 @@ def du_lieu():
 
         danh_sach = driver.find_elements(By.XPATH, '//*[@id="left"]/div[1]/div')
 
+        if not danh_sach:
+            print(f"Không tìm thấy bài đăng ở trang {page}, dừng lại.")
+            break
+
         for bai_dang in danh_sach:
             try:
                 try:
-                    image = bai_dang.find_element(By.XPATH, '//*[@id="left"]/div[1]/div[1]/div[1]/a/img').get_attribute('src')
+                    image = bai_dang.find_element(By.XPATH, './/div[1]/a/img').get_attribute('src')
                 except:
                     image = "Không có ảnh"
 
@@ -82,6 +85,8 @@ def du_lieu():
 
             except Exception as e:
                 print("Lỗi khi lấy bài:", e)
+        
+        page += 1
 
     df = pd.DataFrame(data, columns=["Ảnh", "Tiêu đề", "Mô tả", "Giá", "Hướng", "Diện tích", "Địa chỉ", "Ngày đăng"])
     df.to_excel(r"D:\BaiTap\Tu_Dong_Hoa\BaiTapLon\cho_thue_nha_rieng.xlsx", index=False)
